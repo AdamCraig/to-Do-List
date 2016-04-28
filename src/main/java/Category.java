@@ -23,4 +23,8 @@ public class Category {
     return instances;
   }
 
+  public int getId() {
+    return mId;
+  }
+
 }

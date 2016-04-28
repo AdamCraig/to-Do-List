@@ -28,19 +28,19 @@ public class CategoryTest {
     assertTrue(Category.all().contains(secondCategory));
   }
 
-  // @Test
-  // public void clear_emptiesAllCategoriesFromList_0() {
-  //   Category testCategory = new Category("Home");
-  //   Category.clear();
-  //   assertEquals(Category.all().size(), 0);
-  // }
-  //
-  // @Test
-  // public void getId_categoriesInstantiateWithAnId_1() {
-  //   Category testCategory = new Category("Home");
-  //   assertEquals(1, testCategory.getId());
-  // }
-  //
+  @Test
+  public void clear_emptiesAllCategoriesFromList_0() {
+    Category testCategory = new Category("Home");
+    Category.clear();
+    assertEquals(Category.all().size(), 0);
+  }
+
+  @Test
+  public void getId_categoriesInstantiateWithAnId_1() {
+    Category testCategory = new Category("Home");
+    assertEquals(1, testCategory.getId());
+  }
+
   // @Test
   // public void find_returnsCategoryWithSameId_secondCategory() {
   //   Category firstCategory = new Category("Home");
