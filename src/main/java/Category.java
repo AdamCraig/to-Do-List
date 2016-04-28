@@ -15,4 +15,12 @@ public class Category {
     instances.clear();
   }
 
+  public String getName() {
+    return mName;
+  }
+
+  public static ArrayList<Category> all() {
+    return instances;
+  }
+
 }
