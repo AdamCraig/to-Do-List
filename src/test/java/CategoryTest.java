@@ -48,8 +48,22 @@ public class CategoryTest {
     assertEquals(Category.find(secondCategory.getId()), secondCategory);
   }
 
-  // @Test
-  // public void find_returnsNullWhenNoCategoryFound_null() {
-  //   assertTrue(Category.find(999) == null);
-  // }
+  @Test
+  public void find_returnsNullWhenNoCategoryFound_null() {
+    assertTrue(Category.find(999) == null);
+  }
+
+  @Test
+  public void getTasks_initiallyReturnsEmptyList_ArrayList() {
+    Category testCategory = new Category("Home");
+    assertEquals(0, testCategory.getTasks().size());
+  }
+
+  @Test
+  public void addTask_addsTasksToList_true() {
+    Category testCategory = new Category("Home");
+    Task testTask = new Task ("Mow the lawn");
+    testCategory.addTask(testTask);
+    assertTrue(testCategory.getTasks().contains(testTask));
+  }
 }
