@@ -48,7 +48,7 @@ public class TaskTest {
 
   @Test
   public void getId_tasksInstantiateWithAnID_1() {
-    // Task.clear();  // No longer needed because of ClearRule.java
+    // Task.clear(); ClearRule takes care of clearing our Task
     Task myTask = new Task("Mow the lawn");
     assertEquals(1, myTask.getId());
   }

@@ -1,5 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -16,6 +17,9 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   @Test
   public void rootTest() {
@@ -62,5 +66,11 @@ public class AppTest extends FluentTest {
     click("a", withText("View tasks"));
     click("a", withText("Do the dishes"));
     assertThat(pageSource()).contains("Do the dishes");
+  }
+
+  @Test
+  public void taskNotFoundMessageShown() {
+    goTo("http://localhost:4567/tasks/999");
+    assertThat(pageSource()).contains("Task not found");
   }
 }

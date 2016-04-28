@@ -39,12 +39,12 @@ public class Task {
   public int getId() {
     return mId;
   }
-  
+
   public static Task find(int id) {
     try {
-      return instances.get(id-1);
-      } catch (IndexOutOfBoundsException e) {
-        return null;
-      }
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
     }
   }
+}
