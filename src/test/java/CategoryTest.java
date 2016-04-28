@@ -41,13 +41,13 @@ public class CategoryTest {
     assertEquals(1, testCategory.getId());
   }
 
-  // @Test
-  // public void find_returnsCategoryWithSameId_secondCategory() {
-  //   Category firstCategory = new Category("Home");
-  //   Category secondCategory = new Category("Work");
-  //   assertEquals(Category.find(secondCategory.getId()), secondCategory);
-  // }
-  //
+  @Test
+  public void find_returnsCategoryWithSameId_secondCategory() {
+    Category firstCategory = new Category("Home");
+    Category secondCategory = new Category("Work");
+    assertEquals(Category.find(secondCategory.getId()), secondCategory);
+  }
+
   // @Test
   // public void find_returnsNullWhenNoCategoryFound_null() {
   //   assertTrue(Category.find(999) == null);
